@@ -1,11 +1,8 @@
-version: '3'
-
+---
+version: '3.9'
 services:
-  hh-ru-auto-resume-raising-bot:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  hh:
     image: mitetenov/hh-ru-auto-resume-raising-bot:latest
-    volumes:
-      - ./.env:/.env
-    restart: unless-stopped
+    restart: always
+    env_file:
+      - .env_pub
